@@ -2,13 +2,10 @@
 import AuthCheck from "@/components/authCheck/page";
 import { useEffect, useState } from "react";
 import { fetchEvents } from "@/app/lib/fetchEvents";
-
-interface Props {
-  events: Event[];
-}
+import { CustomEvent } from "../../types";
 
 const Dashboard = () => {
-  const [events, setEvents] = useState<Event[]>([]);
+  const [events, setEvents] = useState<CustomEvent[]>([]); // Use CustomEvent[] here
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -24,6 +21,7 @@ const Dashboard = () => {
 
     getEvents();
   }, []);
+
   console.log(events);
   return <AuthCheck>asd</AuthCheck>;
 };
