@@ -1,3 +1,20 @@
 * {
   margin: 0;
 }
+
+/* src/app/globals.css */
+body {
+  font-family: "Roboto", sans-serif; /* Replace 'Roboto' with your chosen font */
+}
+
+a {
+  all: unset;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+input:focus {
+  outline: none;
+}
