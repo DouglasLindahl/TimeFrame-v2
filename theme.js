@@ -1,4 +1,3 @@
-// theme.js or colors.js
 const colors = {
   primary: "#1D2ECC",
   secondary: "#EE4266",

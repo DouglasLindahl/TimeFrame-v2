@@ -1,5 +1,5 @@
 import supabase from "../../../supabase";
-import { CustomEvent } from "../types"; // Your existing CustomEvent interface
+import { CustomEvent } from "../../types"; // Your existing CustomEvent interface
 
 export const fetchEvents = async (): Promise<CustomEvent[]> => {
   const { data, error } = await supabase.from("events").select("*");

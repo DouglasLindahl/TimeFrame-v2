@@ -2,7 +2,8 @@
 import AuthCheck from "@/components/authCheck/page";
 import { useEffect, useState } from "react";
 import { fetchEvents } from "@/app/lib/fetchEvents";
-import { CustomEvent } from "../../types";
+import { CustomEvent } from "../../../types";
+import EventCard from "@/components/eventCard/page";
 
 const Dashboard = () => {
   const [events, setEvents] = useState<CustomEvent[]>([]); // Use CustomEvent[] here
@@ -23,7 +24,19 @@ const Dashboard = () => {
   }, []);
 
   console.log(events);
-  return <AuthCheck>asd</AuthCheck>;
+  return (
+    <AuthCheck>
+      <div>
+        {error && <p className="text-red-500">{error}</p>}
+        {events.length === 0 && !error && <p>No events found.</p>}
+        <div className="space-y-4">
+          {events.map((event) => (
+            <EventCard key={event.event_id} event={event} />
+          ))}
+        </div>
+      </div>
+    </AuthCheck>
+  );
 };
 
 export default Dashboard;
